@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.msg {
+  border: 2px solid orange;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+input {
+  margin: 10px 0 0 0;
+  padding: 10px;
+  border: unset;
+  border-bottom: 2px solid #e3e3e3;
+  outline: none;
+}
+
+label,
+button {
+  margin-top: 25px;
+}
+
+button {
+  padding: 10px;
+  background: #e3e3e3;
+  border: unset;
+  cursor: pointer;
+}
+
+#regDiv {
+  padding: 10px;
+  background: #e3e3e3;
+  border: unset;
+  cursor: pointer;
+}
+
+.input-correction {
+  margin: 0;
+  padding: 0;
+  color: lightslategrey;
+  font-size: 12px;
+}
+
+.input-uncorrect,
+.error {
+  color: red;
+}
+
+.home {
+  flex-direction: column;
+}

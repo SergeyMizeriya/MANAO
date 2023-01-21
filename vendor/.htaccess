@@ -1,0 +1,9 @@
+<!-- ЗАПРЕЩАЕМ ВХОД В БАЗУ ДАННЫХ ПО ПРЯМОМУ URL -->
+
+SetEnvIf Request_URI "\.php$" php
+
+<Files "database.json">
+    Order Allow,Deny
+    Allow from env=php
+    Deny from all
+</Files>
