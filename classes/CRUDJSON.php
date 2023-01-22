@@ -45,12 +45,13 @@ class CRUDJSON
                 foreach ($jsonArray as $key => $value) {
                     // ЕСЛИ ЕСТЬ ДАННЫЕ В БАЗЕ УСТАНАВЛИВАЕМ КУКИ И ВОЗВРАЩЕМ ДАННЫЕ
                     if (($value['login'] == $registerFormData['auth-login']) && ($value['password'] == $registerFormData['auth-password'])) {
-                        setcookie('login', $registerFormData['auth-login'], time() + 3600 * 24, '/');
-                        $this->result['success'] = true;
+                        $this->result['success'] = 'true';
                         $this->result = json_encode($this->result, JSON_UNESCAPED_UNICODE);
                         print_r($this->result);
+                        setcookie('login', $registerFormData['auth-login'], time() + 3600 * 24, '/');
+                        die;
                     } else {
-                        $this->result['success'] = false;
+                        $this->result['success'] = 'false';
                         $this->result = json_encode($this->result, JSON_UNESCAPED_UNICODE);
                         print_r($this->result);
                     }

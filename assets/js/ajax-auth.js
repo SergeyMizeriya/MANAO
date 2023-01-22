@@ -11,8 +11,13 @@ $("document").ready(function () {
       data: dataForm,
       success: function (data) {
         // ЕСЛИ ОТВЕТ НЕ ПУСТОЙ ПАРСИМ
+        console.log(data);
         if (data !== "") {
-          const response = $.parseJSON(data);
+          let response = $.parseJSON(data);
+          console.log(response);
+          if (response.success === "true") {
+            window.location.href = "http://manao/home.php";
+          }
           // РАЗБИРАЕМСЯ С ОШИБКАМИ
           if (response.loginError) {
             document.querySelector("#auth-login-error").innerHTML =
@@ -22,11 +27,9 @@ $("document").ready(function () {
             document.querySelector("#auth-password-error").innerHTML =
               response["passwordError"];
           }
-          //ЕСЛИ ОШИЬОК НЕТ - ПЕРЕХОДИМ НА СТРАНИЦУ ПРОФИЛЯ
-          if (response.success == true) {
-            window.location.href = "http://manao/home.php";
-          }
-          if (response.success == false) {
+          //ЕСЛИ ОШИБОК НЕТ - ПЕРЕХОДИМ НА СТРАНИЦУ ПРОФИЛЯ
+
+          if (response.success === "false") {
             document.querySelector("#auth-error").innerHTML =
               "неверный логин и/или пароль";
           }
