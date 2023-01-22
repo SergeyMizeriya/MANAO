@@ -11,10 +11,8 @@ $("document").ready(function () {
       data: dataForm,
       success: function (data) {
         // ЕСЛИ ОТВЕТ НЕ ПУСТОЙ ПАРСИМ
-        console.log(data);
         if (data !== "") {
           let response = $.parseJSON(data);
-          console.log(response);
           if (response.success == true) {
             window.location.href = "http://manao/home.php";
           }
@@ -36,7 +34,7 @@ $("document").ready(function () {
         }
       },
       error: function (data) {
-        console.log("ошибка");
+        console.log("ошибка, AJAX не отправлен");
       },
     });
   });
