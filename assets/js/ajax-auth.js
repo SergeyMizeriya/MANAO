@@ -15,7 +15,7 @@ $("document").ready(function () {
         if (data !== "") {
           let response = $.parseJSON(data);
           console.log(response);
-          if (response.success === "true") {
+          if (response.success == true) {
             window.location.href = "http://manao/home.php";
           }
           // РАЗБИРАЕМСЯ С ОШИБКАМИ
@@ -29,7 +29,7 @@ $("document").ready(function () {
           }
           //ЕСЛИ ОШИБОК НЕТ - ПЕРЕХОДИМ НА СТРАНИЦУ ПРОФИЛЯ
 
-          if (response.success === "false") {
+          if (response.success == false) {
             document.querySelector("#auth-error").innerHTML =
               "неверный логин и/или пароль";
           }
