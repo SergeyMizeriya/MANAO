@@ -1,5 +1,3 @@
-<!-- ЗАПРЕЩАЕМ ВХОД В БАЗУ ДАННЫХ ПО ПРЯМОМУ URL -->
-
 SetEnvIf Request_URI "\.php$" php
 
 <Files "database.json">
