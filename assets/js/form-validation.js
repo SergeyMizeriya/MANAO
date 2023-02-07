@@ -1,7 +1,7 @@
 // ПОМОГАЕМ ПОЛЬЗОВАТЕЛЮ ВВЕСТИ ДАННЫЕ ЛОГИНА КОРРЕКТНО
 let loginForm = document.querySelector("#loginid");
 loginForm.addEventListener("input", function () {
-  if (loginForm.value.length < 6) {
+  if (loginForm.value.length < 6 && loginForm.value.length > 0) {
     document.querySelector("#login-error").innerHTML =
       "введите больше символов";
   } else {
@@ -11,6 +11,8 @@ loginForm.addEventListener("input", function () {
   // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
   if (loginForm.value.indexOf(" ") > -1) {
     document.querySelector("#login-error").innerHTML = "без пробелов";
+  } else {
+    document.querySelector("#login-error").innerHTML = "";
   }
 });
 
@@ -32,6 +34,8 @@ passwordForm.addEventListener("input", function () {
   // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
   if (passwordForm.value.indexOf(" ") > -1) {
     document.querySelector("#password-error").innerHTML = "без пробелов";
+  } else {
+    document.querySelector("#password-error").innerHTML = "";
   }
 });
 
@@ -42,6 +46,8 @@ confirmPasswordForm.addEventListener("input", function () {
   if (confirmPasswordForm.value.indexOf(" ") > -1) {
     document.querySelector("#password-confirm-error").innerHTML =
       "без пробелов";
+  } else {
+    document.querySelector("#password-confirm-error").innerHTML = "";
   }
 });
 
@@ -51,6 +57,8 @@ emailForm.addEventListener("input", function () {
   // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
   if (emailForm.value.indexOf(" ") > -1) {
     document.querySelector("#email-error").innerHTML = "без пробелов";
+  } else {
+    document.querySelector("#email-error").innerHTML = "";
   }
 });
 
@@ -71,5 +79,7 @@ nameForm.addEventListener("input", function () {
   // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
   if (nameForm.value.indexOf(" ") > -1) {
     document.querySelector("#full-name-error").innerHTML = "без пробелов";
+  } else {
+    document.querySelector("#full-name-error").innerHTML = "";
   }
 });
