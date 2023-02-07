@@ -44,7 +44,7 @@ if (isset($_COOKIE['login'])) {
         <span class='error' id="email-error"></span>
         <p class="input-correction"></p>
         <label for="">Имя</label>
-        <input type="text" name="full_name" id='name' placeholder="Ввелите свое имя" required>
+        <input type="text" name="full_name" id="name" placeholder="Ввелите свое имя" required>
         <span class='error' id="full-name-error"></span>
         <p class="input-correction" id="login-info">не менее 2 символов, только буквы</p>
         <span class='error' id="space-error"></span>
