@@ -31,6 +31,10 @@ $("document").ready(function () {
           document.querySelector("#password-confirm-error").innerHTML =
             response["passwordConfirmError"];
         }
+        if (response.emailError) {
+          document.querySelector("#email-error").innerHTML =
+            response["emailError"];
+        }
         if (response.fullNameLengthError) {
           document.querySelector("#full-name-error").innerHTML =
             response["fullNameLengthError"];

@@ -1,1 +1,65 @@
-{"0":{"login":"qweqwe","password":"0024c6d66f5bf8498cc952a1ea0da08f","password_confirm":"0024c6d66f5bf8498cc952a1ea0da08f","email":"qwe@qwe","full_name":"qwe"},"1":{"login":"asdasd","password":"e341450e51b6ae4f266c8963f88f825e","password_confirm":"e341450e51b6ae4f266c8963f88f825e","email":"asd@asd","full_name":"asd"},"2":{"login":"zxczxc","password":"e304706cb8702b91695fdd6bbf5a7021","password_confirm":"e304706cb8702b91695fdd6bbf5a7021","email":"qwe@qwe","full_name":"zxc"}}
+{
+  "0": {
+    "login": "qweqwe",
+    "password": "0024c6d66f5bf8498cc952a1ea0da08f",
+    "password_confirm": "0024c6d66f5bf8498cc952a1ea0da08f",
+    "email": "qwe@qwe",
+    "full_name": "qwe"
+  },
+  "1": {
+    "login": "asdasd",
+    "password": "e341450e51b6ae4f266c8963f88f825e",
+    "password_confirm": "e341450e51b6ae4f266c8963f88f825e",
+    "email": "asd@asd",
+    "full_name": "asd"
+  },
+  "2": {
+    "login": "zxczxc",
+    "password": "e304706cb8702b91695fdd6bbf5a7021",
+    "password_confirm": "e304706cb8702b91695fdd6bbf5a7021",
+    "email": "qwe@qwe",
+    "full_name": "zxc"
+  },
+  "3": {
+    "login": "\u0444\u044b\u0432\u0444\u044b",
+    "password": "4297f44b13955235245b2497399d7a93",
+    "password_confirm": "d7ca15084acef230bc32e763f3eef763",
+    "email": "qwe@qwe",
+    "full_name": "\u044f"
+  },
+  "4": {
+    "login": "testuser",
+    "password": "5bacd9f25613659b2fbd2f3a58822e5c",
+    "password_confirm": "5bacd9f25613659b2fbd2f3a58822e5c",
+    "email": "qwe@qwe",
+    "full_name": "aaa"
+  },
+  "5": {
+    "login": "rfrfrf",
+    "password": "bea2f3fe6ec7414cdf0bf233abba7ef0",
+    "password_confirm": "bea2f3fe6ec7414cdf0bf233abba7ef0",
+    "email": "qwe@qwe",
+    "full_name": "rfrf"
+  },
+  "6": {
+    "login": "tgtgtg",
+    "password": "1f0eb0985870635e62fa2f68a223b173",
+    "password_confirm": "1f0eb0985870635e62fa2f68a223b173",
+    "email": "asd@asd",
+    "full_name": "tgtg"
+  },
+  "7": {
+    "login": "asdasda",
+    "password": "e341450e51b6ae4f266c8963f88f825e",
+    "password_confirm": "e341450e51b6ae4f266c8963f88f825e",
+    "email": "qwe@qwe",
+    "full_name": "aa"
+  },
+  "8": {
+    "login": "asdasdasd",
+    "password": "7815696ecbf1c96e6894b779456d330e",
+    "password_confirm": "7815696ecbf1c96e6894b779456d330e",
+    "email": "qwe@qwe",
+    "full_name": "asd"
+  }
+}

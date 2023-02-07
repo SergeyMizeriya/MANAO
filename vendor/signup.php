@@ -27,15 +27,15 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTE
 
     // СОЗДАЕМ ОБЪЕКТ ДЛЯ РЕГИСТРАЦИИ ПОЛЬЗОВАТЕЛЯ
     $registration = new Registration($login, $password, $passwordConfirm, $email, $fullName);
-    $registration->informationChecking($login, $password, $passwordConfirm, $fullName);
+    $registration->informationChecking($login, $password, $email, $passwordConfirm, $fullName);
     // СОЗДАЕМ ОБЪЕКТ CRUD-КЛАССА ДЛЯ РАБОТЫ С БАЗОЙ ДАННЫХ
     $crudjson = new CRUDJSON;
-    $crudjson->createNewEntry($registerFormData);
     // ЕСЛИ ОШИБКИ ЕСТЬ ОТПРАВЛЯЕМ ИХ ОБРАТНО
     if (!empty($registration->errors)) {
         $registration->getErrors();
     } else {
-        // ЕСЛИ ОШИБОК НЕТ - УСТАНАВЛИВАЕМ КУКИ  И ВОЗВРАЩАЕМ ПУСТОЙ МАССИВ
+        // ЕСЛИ ОШИБОК НЕТ - ЗАПИСЫВАЕМ ДАННЫЕ В БАЗУ, УСТАНАВЛИВАЕМ КУКИ  И ВОЗВРАЩАЕМ ПУСТОЙ МАССИВ
+        $crudjson->createNewEntry($registerFormData);
         setcookie('login', $registerFormData['login'], time() + 3600 * 24, '/');
         $registration->getErrors();
     }
