@@ -20,14 +20,14 @@ class Registration
     }
 
     // ПРОВЕРКА ДАННЫХ
-    public function informationChecking($login, $password, $passwordConfirm, $fullName)
+    public function informationChecking($login, $password, $email, $passwordConfirm, $fullName)
     {
         // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ЛОГИНА
         if (strlen($login) < 6) {
             $this->errors['loginError'] = 'слишком короткий логин';
         }
-        // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ПАРОЛЯ
 
+        // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ПАРОЛЯ
         if (
             strlen($password) <= 6 &&
             preg_match("/([0-9]+[a-z]+)|([a-z]+[0-9]+)/i", $password) == 0
@@ -42,6 +42,12 @@ class Registration
             $this->errors['passwordConfirmError'] = 'пароли не совпадают';
         }
         // TODO ПРОВЕРКА ПОЧТЫ НА НАЛИЧИЕ СИМВОЛА СОБАЧКИ
+
+        if (
+            strpos($email, '.') == false
+        ) {
+            $this->errors['emailError'] = 'некорректный email';
+        }
         // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ИМЕНИ
 
         if (
