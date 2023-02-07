@@ -61,5 +61,12 @@
     "password_confirm": "7815696ecbf1c96e6894b779456d330e",
     "email": "qwe@qwe",
     "full_name": "asd"
+  },
+  "9": {
+    "login": "ertert",
+    "password": "3136c7b8c3dfc54aef1307c0a87817b4",
+    "password_confirm": "3136c7b8c3dfc54aef1307c0a87817b4",
+    "email": "qwe@qw.e",
+    "full_name": "ert"
   }
 }

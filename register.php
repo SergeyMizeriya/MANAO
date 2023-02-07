@@ -36,18 +36,18 @@ if (isset($_COOKIE['login'])) {
         <span class='error' id="password-error"></span>
         <p class="input-correction" id="password-info">не менее 6 символов, должен содержать буквы и цифры</p>
         <label for="">Подтверждение пароля</label>
-        <input type="password" name="password_confirm" placeholder="Введите свой пароль еще раз" required>
+        <input type="password" name="password_confirm" id='passwordConfirm' placeholder="Введите свой пароль еще раз" required>
         <span class='error' id="password-confirm-error"></span>
         <p class="input-correction"></p>
         <label for="">Почта</label>
-        <input type="email" name="email" placeholder="Ввелите адрес своей почты" required>
+        <input type="email" name="email" id="email" placeholder="Ввелите адрес своей почты" required>
         <span class='error' id="email-error"></span>
         <p class="input-correction"></p>
         <label for="">Имя</label>
         <input type="text" name="full_name" id='name' placeholder="Ввелите свое имя" required>
         <span class='error' id="full-name-error"></span>
         <p class="input-correction" id="login-info">не менее 2 символов, только буквы</p>
-
+        <span class='error' id="space-error"></span>
         <input type="submit" value="Зарегистрироваться">
         <p>У вас уже есть аккаунт? <a href="/index.php">Авторезируйтесь</a></p>
     </form>

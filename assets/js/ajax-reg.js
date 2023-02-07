@@ -43,6 +43,10 @@ $("document").ready(function () {
           document.querySelector("#full-name-error").innerHTML =
             response["fullNameStructureError"];
         }
+        if (response.spaceError) {
+          document.querySelector("#space-error").innerHTML =
+            response["spaceError"];
+        }
       },
       error: function (data) {
         console.log("ошибка");

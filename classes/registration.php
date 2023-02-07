@@ -34,8 +34,8 @@ class Registration
         ) {
             $this->errors['passwordError'] = 'это неподходящий пароль';
         }
-        // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ПОВТОРНО ПАРОЛЯ
 
+        // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ПОВТОРНО ПАРОЛЯ
         if (
             $password !== $passwordConfirm
         ) {
@@ -58,7 +58,16 @@ class Registration
         if (
             !ctype_alpha($fullName)
         ) {
-            $this->errors['fullNameStructureError'] = 'в имени не должно быть цифр';
+            $this->errors['fullNameStructureError'] = 'в имени должны быть только буквы';
+        }
+        if (
+            strpos($login, ' ') !== false ||
+            strpos($password, ' ') !== false ||
+            strpos($passwordConfirm, ' ') !== false ||
+            strpos($email, ' ') !== false ||
+            strpos($fullName, ' ') !== false
+        ) {
+            $this->errors['spaceError'] = 'в полях формы не должно быть пробелов';
         }
     }
 

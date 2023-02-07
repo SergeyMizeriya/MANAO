@@ -7,6 +7,11 @@ loginForm.addEventListener("input", function () {
   } else {
     document.querySelector("#login-error").innerHTML = "";
   }
+
+  // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
+  if (loginForm.value.indexOf(" ") > -1) {
+    document.querySelector("#login-error").innerHTML = "без пробелов";
+  }
 });
 
 // ПОМОГАЕМ ПОЛЬЗОВАТЕЛЮ ВВЕСТИ ДАННЫЕ ПАРОЛЯ КОРРЕКТНО
@@ -23,6 +28,30 @@ passwordForm.addEventListener("input", function () {
   } else {
     document.querySelector("#password-error").innerHTML = "";
   }
+
+  // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
+  if (passwordForm.value.indexOf(" ") > -1) {
+    document.querySelector("#password-error").innerHTML = "без пробелов";
+  }
+});
+
+// ПОМОГАЕМ ПОЛЬЗОВАТЕЛЮ ВВЕСТИ ДАННЫЕ ДУБЛИРОВАННОГО ПАРОЛЯ КОРРЕКТНО
+let confirmPasswordForm = document.querySelector("#passwordConfirm");
+confirmPasswordForm.addEventListener("input", function () {
+  // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
+  if (confirmPasswordForm.value.indexOf(" ") > -1) {
+    document.querySelector("#password-confirm-error").innerHTML =
+      "без пробелов";
+  }
+});
+
+// ПОМОГАЕМ ПОЛЬЗОВАТЕЛЮ ВВЕСТИ ДАННЫЕ ПОЧТЫ КОРРЕКТНО
+let emailForm = document.querySelector("#email");
+emailForm.addEventListener("input", function () {
+  // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
+  if (emailForm.value.indexOf(" ") > -1) {
+    document.querySelector("#email-error").innerHTML = "без пробелов";
+  }
 });
 
 // ПОМОГАЕМ ПОЛЬЗОВАТЕЛЮ ВВЕСТИ ДАННЫЕ ИМЕНИ КОРРЕКТНО
@@ -37,5 +66,10 @@ nameForm.addEventListener("input", function () {
       "введите больше 2 символов, без цифр";
   } else {
     document.querySelector("#full-name-error").innerHTML = "";
+  }
+
+  // СООБЩАЕМ О НАЛИЧИИ ПРОБЕЛОВ
+  if (nameForm.value.indexOf(" ") > -1) {
+    document.querySelector("#full-name-error").innerHTML = "без пробелов";
   }
 });
