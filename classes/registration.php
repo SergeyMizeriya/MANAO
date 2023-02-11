@@ -30,7 +30,7 @@ class Registration
         // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ПАРОЛЯ
         if (
             strlen($password) <= 6 &&
-            preg_match("/([0-9]+[a-z]+)|([a-z]+[0-9]+)/i", $password) == 0
+            preg_match("/^(?=.*[a-z])(?=.*[0-9])(?=.*[^\w\s]).{6,}/", $password) == 0
         ) {
             $this->errors['passwordError'] = 'это неподходящий пароль';
         }
