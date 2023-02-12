@@ -71,6 +71,59 @@ class Registration
         }
     }
 
+    public function regCheckLoginInfo($registerFormData)
+    {
+        if (file_exists('database.json')) {
+            $json = file_get_contents('database.json');
+            $jsonArray = json_decode($json, true);
+
+            if (isset($registerFormData['login'])) {
+                foreach ($jsonArray as $key => $value) {
+                    // ЕСЛИ ЕСТЬ ДАННЫЕ В БАЗЕ УСТАНАВЛИВАЕМ КУКИ И ВОЗВРАЩЕМ ДАННЫЕ
+                    if (($value['login'] == $registerFormData['login'])) {
+                        $this->errors['uniqLogin'] = false;
+                        // $this->errors = json_encode($this->result, JSON_UNESCAPED_UNICODE);
+                        // print_r($this->errors);
+                        // setcookie('login', $registerFormData['auth-login'], time() + 3600 * 24, '/');
+                        // exit;
+                    }
+                }
+                // if ($this->result['success'] !== true) {
+                //     $this->result['success'] = false;
+                //     $this->result = json_encode($this->result, JSON_UNESCAPED_UNICODE);
+                //     print_r($this->result);
+                // }
+            }
+        }
+    }
+
+    public function regCheckEmailInfo($registerFormData)
+    {
+        if (file_exists('database.json')) {
+            $json = file_get_contents('database.json');
+            $jsonArray = json_decode($json, true);
+
+            if (isset($registerFormData['email'])) {
+                foreach ($jsonArray as $key => $value) {
+                    // ЕСЛИ ЕСТЬ ДАННЫЕ В БАЗЕ УСТАНАВЛИВАЕМ КУКИ И ВОЗВРАЩЕМ ДАННЫЕ
+                    if (($value['email'] == $registerFormData['email'])) {
+                        $this->errors['uniqEmail'] = false;
+                        // $this->errors = json_encode($this->result, JSON_UNESCAPED_UNICODE);
+                        // print_r($this->errors);
+                        // setcookie('login', $registerFormData['auth-login'], time() + 3600 * 24, '/');
+                        // exit;
+                    }
+                }
+                // if ($this->result['success'] !== true) {
+                //     $this->result['success'] = false;
+                //     $this->result = json_encode($this->result, JSON_UNESCAPED_UNICODE);
+                //     print_r($this->result);
+                // }
+            }
+        }
+    }
+
+
     public function getErrors()
     {
         $this->errors = json_encode($this->errors, JSON_UNESCAPED_UNICODE);

@@ -28,8 +28,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTE
     // СОЗДАЕМ ОБЪЕКТ ДЛЯ РЕГИСТРАЦИИ ПОЛЬЗОВАТЕЛЯ
     $registration = new Registration($login, $password, $passwordConfirm, $email, $fullName);
     $registration->informationChecking($login, $password, $email, $passwordConfirm, $fullName);
+    $registration->regCheckLoginInfo($registerFormData);
+    $registration->regCheckEmailInfo($registerFormData);
     // СОЗДАЕМ ОБЪЕКТ CRUD-КЛАССА ДЛЯ РАБОТЫ С БАЗОЙ ДАННЫХ
     $crudjson = new CRUDJSON;
+
     // ЕСЛИ ОШИБКИ ЕСТЬ ОТПРАВЛЯЕМ ИХ ОБРАТНО
     if (!empty($registration->errors)) {
         $registration->getErrors();

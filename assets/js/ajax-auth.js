@@ -14,7 +14,7 @@ $("document").ready(function () {
         if (data !== "") {
           let response = $.parseJSON(data);
           if (response.success == true) {
-            window.location.href = "http://manao/home.php";
+            window.location.href = "/home.php";
           }
           // РАЗБИРАЕМСЯ С ОШИБКАМИ
           if (response.loginError) {

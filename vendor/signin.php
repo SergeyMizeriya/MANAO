@@ -30,6 +30,6 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTE
     } else {
         // ЕСЛИ ОШИБОК НЕТ ПРОВЕРЯМ ЕСТЬ ЛИ ТАКОЙ ПОЛЬЗОВАТЛЬ В БАЗЕ ДАННЫХ
         $crudjson = new CRUDJSON;
-        $crudjson->checkInfo($registerFormData);
+        $crudjson->authCheckInfo($registerFormData);
     }
 }
