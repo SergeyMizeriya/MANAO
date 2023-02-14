@@ -30,9 +30,7 @@ class Registration
         // ПРОВЕРКА ПРАВИЛЬНОСТИ ВВЕДЕНОГО ПАРОЛЯ
         if (
             strlen($password) <= 6 ||
-            // preg_match("/^(?=.*[a-z])(?=.*[0-9])(?=.*[^\w\s]).{6,}/", $password) == 0
             preg_match("/^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z\d]+$/", $password) == 0
-            // preg_match("/^(?=.*\d)(?=.*[A-z])[A-z\d]+$/", $password) == 0
         ) {
             $this->errors['passwordError'] = 'это неподходящий пароль';
         }
@@ -72,6 +70,7 @@ class Registration
         }
     }
 
+    // МЕТОД ДЛЯ ПРОВЕРКИ УНИКАЛЕН ЛИ ЛОГИН
     public function regCheckLoginInfo($registerFormData)
     {
         if (file_exists('database.json')) {
@@ -89,6 +88,7 @@ class Registration
         }
     }
 
+    // МЕТОД ДЛЯ ПРОВЕРКИ УНИКАЛЕН ЛИ ЕМАЙЛ
     public function regCheckEmailInfo($registerFormData)
     {
         if (file_exists('database.json')) {
