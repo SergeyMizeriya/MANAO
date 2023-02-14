@@ -31,6 +31,7 @@ class Registration
         if (
             strlen($password) <= 6 &&
             preg_match("/^(?=.*[a-z])(?=.*[0-9])(?=.*[^\w\s]).{6,}/", $password) == 0
+            // preg_match("/^(?=.*\d)(?=.*[A-z])[A-z\d]+$/", $password) == 0
         ) {
             $this->errors['passwordError'] = 'это неподходящий пароль';
         }
@@ -41,7 +42,6 @@ class Registration
         ) {
             $this->errors['passwordConfirmError'] = 'пароли не совпадают';
         }
-        // TODO ПРОВЕРКА ПОЧТЫ НА НАЛИЧИЕ СИМВОЛА СОБАЧКИ
 
         if (
             strpos($email, '.') == false
@@ -79,20 +79,11 @@ class Registration
 
             if (isset($registerFormData['login'])) {
                 foreach ($jsonArray as $key => $value) {
-                    // ЕСЛИ ЕСТЬ ДАННЫЕ В БАЗЕ УСТАНАВЛИВАЕМ КУКИ И ВОЗВРАЩЕМ ДАННЫЕ
+
                     if (($value['login'] == $registerFormData['login'])) {
                         $this->errors['uniqLogin'] = false;
-                        // $this->errors = json_encode($this->result, JSON_UNESCAPED_UNICODE);
-                        // print_r($this->errors);
-                        // setcookie('login', $registerFormData['auth-login'], time() + 3600 * 24, '/');
-                        // exit;
                     }
                 }
-                // if ($this->result['success'] !== true) {
-                //     $this->result['success'] = false;
-                //     $this->result = json_encode($this->result, JSON_UNESCAPED_UNICODE);
-                //     print_r($this->result);
-                // }
             }
         }
     }
@@ -105,20 +96,11 @@ class Registration
 
             if (isset($registerFormData['email'])) {
                 foreach ($jsonArray as $key => $value) {
-                    // ЕСЛИ ЕСТЬ ДАННЫЕ В БАЗЕ УСТАНАВЛИВАЕМ КУКИ И ВОЗВРАЩЕМ ДАННЫЕ
+
                     if (($value['email'] == $registerFormData['email'])) {
                         $this->errors['uniqEmail'] = false;
-                        // $this->errors = json_encode($this->result, JSON_UNESCAPED_UNICODE);
-                        // print_r($this->errors);
-                        // setcookie('login', $registerFormData['auth-login'], time() + 3600 * 24, '/');
-                        // exit;
                     }
                 }
-                // if ($this->result['success'] !== true) {
-                //     $this->result['success'] = false;
-                //     $this->result = json_encode($this->result, JSON_UNESCAPED_UNICODE);
-                //     print_r($this->result);
-                // }
             }
         }
     }

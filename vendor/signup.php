@@ -9,11 +9,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTE
 
     // ЧЕРЕЗ AJAX ПРИХОДЯТ ЭТИ ДАННЫЕ
     $login = $_POST['login'];
-    $_POST['password'] = md5($_POST['password']);
-    $password = ($_POST['password']);
-    // НЕ ХРАНИМ ПАРОЛЬ В ОТКРЫТОМ ВИДЕ 
-    $_POST['password_confirm'] = md5($_POST['password_confirm']);
-    $passwordConfirm = ($_POST['password_confirm']);
+    $password = $_POST['password'];
+    $passwordConfirm = $_POST['password_confirm'];
     $email = $_POST['email'];
     $fullName = $_POST['full_name'];
     $registerFormData = $_POST;

@@ -28,6 +28,9 @@ class CRUDJSON
         }
         // Делаем запись в файл
         if ($registerFormData['login']) {
+            // НЕ ХРАНИМ ПАРОЛЬ В ОТКРЫТОМ ВИДЕ 
+            $registerFormData['password'] = md5($registerFormData['password']);
+            $registerFormData['password_confirm'] = md5($registerFormData['password_confirm']);
             $jsonArray[] = $registerFormData;
             file_put_contents('database.json', json_encode($jsonArray, JSON_FORCE_OBJECT | JSON_NUMERIC_CHECK));
         }
